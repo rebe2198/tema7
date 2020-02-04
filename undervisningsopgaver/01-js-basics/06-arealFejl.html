@@ -13,10 +13,28 @@
     <input type="text" id="længde">
     <p>Hvad er bredden?</p>
     <input type="text" id="bredde">
-    <button>Udregn areal og kig i konsolen</button>
+    <button id=knap>Udregn areal og kig i konsolen</button>
 
     <script>
-        let længde = prompt("Angiv længde");
+        document.querySelector("#knap").addEventListener("click", button_Clicked)
+
+        function button_Clicked() {
+
+            let længde = document.querySelector("#længde").value;
+            let bredde = document.querySelector("#bredde").value;
+            let resultat;
+            console.log("Resultatet", resultat);
+
+            if (isNaN(længde) == true || isNaN == true) {
+                resultat = "Ikke et tal"
+            } else {
+                resultat = længde * bredde;
+            }
+            console.log("Resultatet", resultat)
+
+        }
+
+        /*let længde = prompt("Angiv længde");
         let bredde = prompt("Angiv bredde");
 
         function areal(l, b) {
@@ -28,7 +46,7 @@
 
         if (confirm) {
             location.reload();
-        }
+        }*/
 
     </script>
 </body>
